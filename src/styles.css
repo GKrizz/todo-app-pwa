@@ -7,13 +7,14 @@
 }
 
 body {
-    background: #282c34;
-    color: #abb2bf;
-    max-width: 800px; /* Increased width */
-    padding: 2rem;
-    margin: 0 auto;
-    font-size: 1.25rem; /* Increased font size */
-    line-height: 1.6;
+  background: #282c34;
+  color: #abb2bf;
+  max-width: 800px;
+  padding: 2rem;
+  padding-bottom: 120px; /* 🔥 important */
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 .new-item-form {
@@ -80,12 +81,14 @@ body {
 }
 
 .list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Increased gap */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding-bottom: 120px; /* 🔥 more safe space */
 }
 
 .list li {
@@ -157,3 +160,48 @@ body {
 .list li:has(input:checked) label:hover::before {
     background: #145a41; 
 }
+
+/* 🔥 Desktop default */
+.install-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  background: linear-gradient(135deg, #61dafb, #21a1f1);
+  color: #000;
+
+  padding: 8px 14px; /* smaller */
+  font-size: 0.9rem;
+
+  border-radius: 8px;
+  font-weight: 600;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity:0.95;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Mobile - bottom install button */
+@media (max-width: 600px) {
+  .install-btn {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 10px 16px;
+    font-size: 0.9rem;
+
+    border-radius: 20px;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+}
+

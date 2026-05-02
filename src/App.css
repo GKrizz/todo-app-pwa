@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+
+button:not(.install-btn) {
+  background-color: #1a1a1a;
+}

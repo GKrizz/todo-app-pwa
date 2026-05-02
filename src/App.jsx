@@ -32,11 +32,11 @@ export default function App() {
   }, [])
 
   function addTodo(title) {
-    setTodos(currentTodos => [
-      ...currentTodos,
-      { id: crypto.randomUUID(), title, completed: false },
-    ])
-  }
+  setTodos(currentTodos => [
+    { id: crypto.randomUUID(), title, completed: false },
+    ...currentTodos, // 👈 move this AFTER
+  ])
+}
 
   function toggleTodo(id, completed) {
     setTodos(currentTodos =>
@@ -68,8 +68,8 @@ export default function App() {
     <>
       {/* 🔥 Install Button */}
       {showInstallBtn && (
-        <button onClick={handleInstallClick} className="install-btn">
-          Install App
+        <button onClick={handleInstallClick} className="btn install-btn">
+          ⬇ Install
         </button>
       )}
 
