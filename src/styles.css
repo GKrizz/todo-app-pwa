@@ -188,12 +188,13 @@ body {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
-/* 📱 Mobile - bottom install button */
 @media (max-width: 600px) {
   .install-btn {
-    top: auto;
-    bottom: 20px;
+    top: auto !important;   /* 🔥 force override */
+    bottom: 20px !important;
+
     left: 50%;
+    right: auto;            /* 🔥 IMPORTANT */
     transform: translateX(-50%);
 
     padding: 10px 16px;
@@ -204,4 +205,3 @@ body {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   }
 }
-
