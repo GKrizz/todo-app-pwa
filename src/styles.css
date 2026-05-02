@@ -144,22 +144,26 @@ body {
 }
 
 /* Completed Task Styles */
-.list li:has(input:checked) {
-    background: #2e8b57; 
-    color: #e0e0e0; 
+
+/* ✅ Completed Task Styles (React-based) */
+.list li.completed {
+  background: #2e8b57;
+  color: #e0e0e0;
 }
 
-.list li:has(input:checked) label::before {
-    content: "✔";
-    background: #1c7c54; 
-    color: #fff;
-    font-size: 1rem; 
-    font-weight: bold;
+.list li.completed label::before {
+  content: "✔";
+  background: #1c7c54;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.list li:has(input:checked) label:hover::before {
-    background: #145a41; 
+.list li.completed label {
+  text-decoration: line-through;
+  opacity: 0.7;
 }
+
 
 /* 🔥 Desktop default */
 .install-btn {
